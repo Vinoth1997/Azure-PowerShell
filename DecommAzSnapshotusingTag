@@ -1,1 +1,1 @@
-Get-AzSnapshot | Where-Object { $.tags[$tag] -eq $tagvalue } | ForEach-Object { Remove-AzSnapshot -ResourceGroupName $.resourcegroupname -SnapshotName $_.name -Force }
+Get-AzSnapshot | Where-Object { $_.tags[$tag] -eq $tagvalue } | ForEach-Object { Remove-AzSnapshot -ResourceGroupName $_.resourcegroupname -SnapshotName $_.name -Force }
