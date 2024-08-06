@@ -1,1 +1,2 @@
+#script to delete unused snap AZ
 Get-AzSnapshot | Where-Object { $_.tags[$tag] -eq $tagvalue } | ForEach-Object { Remove-AzSnapshot -ResourceGroupName $_.resourcegroupname -SnapshotName $_.name -Force }
